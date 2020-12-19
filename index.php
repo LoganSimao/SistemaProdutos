@@ -52,20 +52,20 @@
 							<td><?php echo $data['marca']; ?></td>
 							<td><?php echo 'R$ ',$data['preco']; ?></td>
 
-							<td><a href="alterar.php?id=<?php echo $data['ID']; ?>" class=""><img class="" src="alt.png"></a></td>
+							<td><a href="alterar.php?id=<?php echo $data['ID']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
 
-							<td><a href="#modal<?php echo $data['ID']; ?>" class=""><img class="" src="ex.png"></a></td>
+							<td><a href="#modal<?php echo $data['ID']; ?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
 
 							<!-- Modal Structure in Materializecss -->
 							  <div id="modal<?php echo $data['ID']; ?>" class="modal">
 							    <div class="modal-content">
-							      <h4>Aviso!</h4>
+							      <h4>Aviso.</h4>
 							      <p>Deseja excluir o Produto?</p>
 							    </div>
 							    <div class="modal-footer">
 							      
 
-							      <form action="excluir_produto.php" method="POST">
+							      <form action="php_action/excluir_produto.php" method="POST">
 							      	<input type="hidden" name="ID" value="<?php echo $data['ID']; ?>">
 
 							      	<button type="submit" name="excluir" class="btn red">Excluir</button>
